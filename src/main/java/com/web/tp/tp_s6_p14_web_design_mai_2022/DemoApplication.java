@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableCaching
-@ComponentScan(basePackages = "com.web.tp.tp_s6_p14_web_design_mai_2022")
+//@ComponentScan(basePackages = "com.web.tp.tp_s6_p14_web_design_mai_2022")
 public class DemoApplication {
 
 	public static void main(String[] args) {
