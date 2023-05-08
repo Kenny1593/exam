@@ -15,8 +15,8 @@ public class HomeController {
     @Autowired
     private PublicationRepository publicationRepository;
     @GetMapping("/")
-    public String index(){
-        return "index";
+    public ModelAndView index(){
+        return this.list();
     }
 
     @GetMapping("/list/*")
