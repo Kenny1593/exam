@@ -1,8 +1,8 @@
 package com.web.tp.tp_s6_p14_web_design_mai_2022.models;
 
 
-import javax.persistence.Entity;
 import javax.persistence.*;
+import javax.persistence.Entity;
 import java.sql.Date;
 
 @Entity

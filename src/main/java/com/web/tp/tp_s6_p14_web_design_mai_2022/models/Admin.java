@@ -1,10 +1,5 @@
 package com.web.tp.tp_s6_p14_web_design_mai_2022.models;
 
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Restrictions;
-
 import javax.persistence.*;
 
 @Entity

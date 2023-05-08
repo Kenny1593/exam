@@ -1,42 +1,27 @@
 package com.web.tp.tp_s6_p14_web_design_mai_2022.controller;
 
-
-import com.web.tp.tp_s6_p14_web_design_mai_2022.repository.AdminRepository;
+import com.web.tp.tp_s6_p14_web_design_mai_2022.models.Publication;
 import com.web.tp.tp_s6_p14_web_design_mai_2022.repository.PublicationRepository;
-import com.web.tp.tp_s6_p14_web_design_mai_2022.repository.Type_pubRepository;
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
-import com.web.tp.tp_s6_p14_web_design_mai_2022.models.Admin;
-import com.web.tp.tp_s6_p14_web_design_mai_2022.models.Type_pub;
-import com.web.tp.tp_s6_p14_web_design_mai_2022.models.Publication;
 
-import java.sql.Date;
 import java.util.List;
 
 @Controller
 public class HomeController {
     @Autowired
-    private AdminRepository adminRepository;
-
-    @Autowired
     private PublicationRepository publicationRepository;
+    @GetMapping("/")
+    public String index(){
+        return "index";
+    }
 
-
-    @Autowired
-    private Type_pubRepository typePubRepository;
-    private SessionFactory sessionFactory;
-
-
-    //FrontOffice
     @GetMapping("/list/*")
     public ModelAndView list() {
-        ModelAndView modelAndView= new ModelAndView("Acceuil");
+        ModelAndView modelAndView= new ModelAndView("Accueil");
         List<Publication> lp1= publicationRepository.findAllById(1);
         List<Publication> lp2= publicationRepository.findAllById(2);
         List<Publication> lp3= publicationRepository.findAllById(3);
@@ -53,7 +38,7 @@ public class HomeController {
 
 
 
-    @GetMapping("/list/{id}")
+    @GetMapping("/list/{id}/*")
     public ModelAndView details(@PathVariable Integer id){
         ModelAndView modelAndView= new ModelAndView();
         List<Publication> pub= publicationRepository.findWhere(id);
@@ -61,5 +46,6 @@ public class HomeController {
         modelAndView.setViewName("details");
         return modelAndView;
     }
+
 
 }

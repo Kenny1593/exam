@@ -13,7 +13,7 @@ public interface PublicationRepository extends JpaRepository<Publication,Integer
     public List<Publication> findWhere(@Param("id") Integer id);
 
     @Query("select p from Publication p where p.id=:id")
-    public List<Publication> findAllById(@Param("id"))
+    public List<Publication> findAllById(@Param("id")Integer id);
 
 
 }
