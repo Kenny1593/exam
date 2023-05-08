@@ -32,7 +32,6 @@ public class HomeController {
         return this.list();
     }
 
-    //FrontOffice
     @GetMapping("/list/*")
     public ModelAndView list() {
         ModelAndView modelAndView= new ModelAndView("List");
